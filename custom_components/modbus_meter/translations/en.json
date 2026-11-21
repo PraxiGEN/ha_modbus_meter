@@ -1,0 +1,71 @@
+{
+  "title": "Modbus Meter",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Select meter model",
+        "description": "Choose the meter model to connect, then configure the connection details in the next step.",
+        "data": {
+          "model": "Meter model"
+        }
+      },
+      "connection": {
+        "title": "Connection details",
+        "description": "Connect to the meter via Modbus TCP (optionally through an RTU-to-TCP serial server). Communication must be enabled on the meter.",
+        "data": {
+          "name": "Connection name (defaults to the meter model; rename to distinguish multiple meters, duplicate names get the slave address appended)",
+          "host": "Meter or serial server IP address",
+          "port": "Modbus TCP port",
+          "slave": "Slave address"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure",
+        "description": "Confirm the meter model, then modify the connection details in the next step.",
+        "data": {
+          "model": "Meter model"
+        }
+      },
+      "reconfigure_connection": {
+        "title": "Modify connection details",
+        "description": "Adjust the connection information, the entry reloads automatically after saving.",
+        "data": {
+          "name": "Connection name (defaults to the meter model; rename to distinguish multiple meters, duplicate names get the slave address appended)",
+          "host": "Meter or serial server IP address",
+          "port": "Modbus TCP port",
+          "slave": "Slave address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the meter. Check the IP, port and slave address."
+    },
+    "abort": {
+      "already_configured": "This meter is already added.",
+      "reconfigure_successful": "Reconfigured successfully."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Runtime settings",
+        "description": "Adjust the polling interval, takes effect immediately after saving.",
+        "data": {
+          "poll_interval": "Polling interval (seconds, minimum 5)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "voltage": { "name": "Voltage" },
+      "current": { "name": "Current" },
+      "power": { "name": "Active power" },
+      "reactive_power": { "name": "Reactive power" },
+      "apparent_power": { "name": "Apparent power" },
+      "power_factor": { "name": "Power factor" },
+      "frequency": { "name": "Frequency" },
+      "energy": { "name": "Total active energy" }
+    }
+  }
+}

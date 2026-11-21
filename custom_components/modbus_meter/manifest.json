@@ -1,0 +1,12 @@
+{
+  "domain": "modbus_meter",
+  "name": "Modbus Meter",
+  "codeowners": ["@PraxiGEN"],
+  "config_flow": true,
+  "documentation": "https://github.com/PraxiGEN/ha_modbus_meter",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/PraxiGEN/ha_modbus_meter/issues",
+  "requirements": ["pymodbus==3.13.1"],
+  "version": "1.0.0"
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Modbus 电表",
+  "config": {
+    "step": {
+      "user": {
+        "title": "选择电表型号",
+        "description": "选择要接入的电表型号，下一步配置连接参数。",
+        "data": {
+          "model": "电表型号"
+        }
+      },
+      "connection": {
+        "title": "连接参数",
+        "description": "通过 Modbus TCP 连接电表（可经串口服务器 RTU 转 TCP），需先在表内开启通讯。",
+        "data": {
+          "name": "连接名称（默认继承电表型号，多表时可改名区分，重名将自动追加从机号）",
+          "host": "电表或串口服务器 IP 地址",
+          "port": "Modbus TCP 端口",
+          "slave": "从机地址"
+        }
+      },
+      "reconfigure": {
+        "title": "重新配置",
+        "description": "确认电表型号，下一步修改连接参数。",
+        "data": {
+          "model": "电表型号"
+        }
+      },
+      "reconfigure_connection": {
+        "title": "修改连接参数",
+        "description": "调整连接信息，保存后自动重载生效。",
+        "data": {
+          "name": "连接名称（默认继承电表型号，多表时可改名区分，重名将自动追加从机号）",
+          "host": "电表或串口服务器 IP 地址",
+          "port": "Modbus TCP 端口",
+          "slave": "从机地址"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法连接电表，请检查 IP、端口与从机地址。"
+    },
+    "abort": {
+      "already_configured": "该电表已添加。",
+      "reconfigure_successful": "重新配置成功。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "运行参数",
+        "description": "调整数据轮询间隔，保存后立即生效。",
+        "data": {
+          "poll_interval": "轮询间隔（秒，最小 5）"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "voltage": { "name": "电压" },
+      "current": { "name": "电流" },
+      "power": { "name": "有功功率" },
+      "reactive_power": { "name": "无功功率" },
+      "apparent_power": { "name": "视在功率" },
+      "power_factor": { "name": "功率因数" },
+      "frequency": { "name": "频率" },
+      "energy": { "name": "总有功电能" }
+    }
+  }
+}
